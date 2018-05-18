@@ -1,0 +1,68 @@
+﻿
+@model ClockInMVC.Models.Employee
+
+@{
+    ViewData["Title"] = "All Trailer";
+}
+<table>
+
+    <tr>
+        <th>@Model.FirstName @Model.MiddleName @Model.LastName</th>
+    </tr>
+
+
+    <tr>
+        <td>
+            Date Of Birth: @Model.Dob
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            License Number: @Model.LicNumber
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            License Issue Date: @String.Format("{0:d}", @Model.LicIssue.Date)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            License Expiration Date:@String.Format("{0:d}", @Model.LicExpire.Date)
+
+    </tr>
+
+    <tr>
+        <td>
+            D.O.T Medical Card Issue Date: @String.Format("{0:d}", @Model.MedIssue.Date)
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            D.O.T Medical Card Expiration Date: @String.Format("{0:d}", @Model.MedExpire.Date)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Job Title: @Model.Title
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            UserName: @Model.UserName
+        </td>
+    </tr>
+
+</table>
+
+<p> <a asp-controller="Employee" asp-action="Index">Back</a> </p>
+
+
+

@@ -1,0 +1,87 @@
+﻿@model ClockInMVC.ViewModels.AddOrderViewModel
+
+@{
+    ViewData["Title"] = "Add Order";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Order" asp-action="Add" method="post">
+
+    <fieldset>
+
+        <div class="form-group">
+            <label asp-for="OrderNumber">Order number </label>
+            <input class="form-control" asp-for="OrderNumber" />
+            <span asp-validation-for="OrderNumber"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Customer">Customer</label>
+            <input class="form-control" asp-for="Customer" />
+            <span asp-validation-for="Customer"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StreetNumber">Street Number</label>
+            <input class="form-control" asp-for="StreetNumber" />
+            <span asp-validation-for="StreetNumber"></span>
+
+
+            <label asp-for="StreetName">Street Name</label>
+            <input class="form-control" asp-for="StreetName" />
+            <span asp-validation-for="StreetName"></span>
+
+
+            <label asp-for="City">City</label>
+            <input class="form-control" asp-for="City" />
+            <span asp-validation-for="City"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="State">State</label>
+            <input class="form-control" asp-for="State" />
+            <span asp-validation-for="State"></span>
+
+
+            <label asp-for="Zip">ZipCode</label>
+            <input class="form-control" asp-for="Zip" />
+            <span asp-validation-for="Zip"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateDue">Due date</label>
+            <input class="form-control" asp-for="DateDue" />
+            <span asp-validation-for="DateDue"></span>
+
+
+            <label asp-for="TimeDue">Time due</label>
+            <input class="form-control" asp-for="TimeDue" />
+            <span asp-validation-for="TimeDue"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LoadPlan">Load Plan</label>
+            <input class="form-control" asp-for="LoadPlan" />
+            <span asp-validation-for="LoadPlan"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TrailersForLoad">Trailer</label>
+            @Html.DropDownListFor(x => x.TrailerID, Model.TrailersForLoad)
+            <span asp-validation-for="TrailersForLoad"></span>
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Submit" name="submitButton" />
+        </div>
+
+    </fieldset>
+</form>

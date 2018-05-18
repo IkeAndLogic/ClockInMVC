@@ -1,0 +1,60 @@
+﻿@model ClockInMVC.Models.Order
+
+@{
+    ViewData["Title"] = "Order Information";
+}
+
+
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Order Number: @Model.OrderNumber
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Customer Name: @Model.Customer
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Customer Address: @Model.StreetNumber  @Model.StreetName, @Model.State, @Model.Zip
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Trailer: @Model.TrailerForLoad
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Date Due: @String.Format("{0:d}", Model.DateDue)
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Time Due: @String.Format("{0:t}", Model.TimeDue)
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Final Destination Load Plan: @Model.LoadPlan
+                </td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+
+
+<p> <a asp-controller="Order" asp-action="Index">Back</a> </p>

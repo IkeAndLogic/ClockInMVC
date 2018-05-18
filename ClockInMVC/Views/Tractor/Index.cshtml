@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<ClockInMVC.Models.Tractor>
+
+@{
+    ViewData["Title"] = "All Tractors";
+}
+
+
+@if (Model.Count == 0)
+{
+    <p> No Tractor added yet!</p>
+}
+
+else
+{
+
+    <table>
+
+        <tr>
+            <th>All Tractors </th>
+        </tr>
+
+        @foreach (var tractor in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Tractor" asp-action="TractorInfo" asp-route-id="@tractor.TractorID"> @tractor.TruckNumber </a>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+}
+<p> <a asp-controller="Tractor" asp-action="Add"> Add Tractor</a> </p>

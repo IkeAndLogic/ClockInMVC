@@ -1,0 +1,27 @@
+﻿@model ClockInMVC.ViewModels.RemoveEmployeeViewModel
+
+@{
+    ViewData["Title"] = "Remove Employee";
+}
+<h2>@ViewData["Title"]</h2>
+
+@if (@Model.Employees.Count == 0)
+{
+
+    <p> nothing to remove </p>
+}
+else
+{
+    <form asp-controller="Employee" asp-action="Remove" method="post">
+
+        @foreach (var employee in Model.Employees)
+        {
+            <div>
+                <input type="checkbox" name="employeeIds" id="@employee.EmployeeID" value="@employee.EmployeeID">
+                <label for=" @employee.EmployeeID">@employee.FirstName  @employee.MiddleName @employee.LastName</label>
+            </div>
+        }
+        <input type="submit" value=" Remove Selected Employees" /><br>
+
+    </form>
+}

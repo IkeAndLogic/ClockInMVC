@@ -1,0 +1,55 @@
+﻿
+@model ClockInMVC.Models.Tractor
+
+@{
+    ViewData["Title"] = "All Tractors";
+}
+<table>
+
+    <tr>
+        <th>@Model.VinNumber</th>
+    </tr>
+
+
+    <tr>
+        <td>
+            Tractor VinNumber: @Model.VinNumber
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Tractor Make: @Model.Make
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Tractor Year: @Model.Year
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Tractor DOT Inspection:@String.Format("{0:d}", Model.DotInp.Date)
+
+    </tr>
+
+    <tr>
+        <td>
+            Tractor Registration Date: @String.Format("{0:d}", Model.RegDate.Date)
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Tractor Plate Number: @Model.VinNumber
+        </td>
+    </tr>
+
+</table>
+
+
+
+<p> <a asp-controller="Tractor" asp-action="Index">Back</a> </p>

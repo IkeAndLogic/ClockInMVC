@@ -1,0 +1,61 @@
+﻿@model ClockInMVC.Models.Trailer
+
+@{
+    ViewData["Title"] = "All Trailer";
+}
+<table>
+
+    <tr>
+        <th>@Model.SerialNumber</th>
+    </tr>
+
+
+    <tr>
+        <td>
+            Trailer Make: @Model.Make
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Trailer Make: @Model.Model
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Trailer Year: @Model.Year
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Trailer DOT Inspection:@String.Format("{0:d}", Model.DotInsp.Date)
+
+    </tr>
+
+    <tr>
+        <td>
+            Trailer Registration Date: @String.Format("{0:d}", Model.RegDate.Date)
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Trailer Plate Number: @Model.Plate
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Trailer Number: @Model.TrailerNumber
+        </td>
+    </tr>
+
+</table>
+
+<p> <a asp-controller="Trailer" asp-action="Index">Back</a> </p>
+
+
+

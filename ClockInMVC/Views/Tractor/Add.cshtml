@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Register Tractor";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+@model ClockInMVC.ViewModels.AddTractorViewModel
+
+<form asp-controller="Tractor" asp-action="Add" method="post">
+    <fieldset>
+
+        <div class="form-group">
+
+            <label asp-for="VinNumber">Vin Number </label>
+            <input class="form-control" asp-for="VinNumber" />
+            <span asp-validation-for="VinNumber"></span>
+
+            <label asp-for="Make">Tractor Make </label>
+            <input class="form-control" asp-for="Make" />
+            <span asp-validation-for="Make"></span>
+
+            <label asp-for="Model"> Tractor Model </label>
+            <input class="form-control" asp-for="Model" />
+            <span asp-validation-for="Model"></span>
+
+
+            <label asp-for="Year">Tractor Year </label>
+            <input class="form-control" asp-for=" Year" />
+            <span asp-validation-for="Year"></span>
+
+
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="DotInp">DOT Inspection Date </label>
+            <input class="input-group date" asp-for="DotInp" />
+            <span asp-validation-for="DotInp"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RegDate"> Registration Date </label>
+            <input class="input-group date" asp-for="RegDate" />
+            <span asp-validation-for="RegDate"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Plate"> Plate Number </label>
+            <input class="form-control" asp-for="Plate" />
+            <span asp-validation-for="Plate"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="TruckNumber"> Assign Truck Number </label>
+            <input class="form-control" asp-for="TruckNumber" />
+            <span asp-validation-for="TruckNumber"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <input type="submit" value="Add Tractor" name="submitButton" />
+        </div>
+
+
+    </fieldset>
+</form>
+
+
+
+<span class="label label-default" name="TodaysDate">@Model.TodaysDate</span>

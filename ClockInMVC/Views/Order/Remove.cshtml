@@ -1,0 +1,28 @@
+﻿
+@model ClockInMVC.ViewModels.RemoveOrderViewModel
+
+@{
+    ViewData["Title"] = "Remove Order";
+}
+<h2>@ViewData["Title"]</h2>
+
+@if (@Model.Orders.Count == 0)
+{
+
+    <p> nothing to remove </p>
+}
+else
+{
+    <form asp-controller="Order" asp-action="Remove" method="post">
+
+        @foreach (var order in Model.Orders)
+        {
+            <div>
+                <input type="checkbox" name="employeeIds" id="@order.OrderID" value="@order.OrderID">
+                <label for=" @order.OrderID">@order.OrderNumber </label>
+            </div>
+        }
+        <input type="submit" value=" Remove Selected Order" /><br>
+
+    </form>
+}

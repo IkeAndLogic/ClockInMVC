@@ -1,0 +1,126 @@
+﻿
+@model ClockInMVC.ViewModels.AddEmployeeViewModel
+
+@{
+    ViewData["Title"] = "Register New Employee";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+
+<form asp-controller="Employee" asp-action="Add" method="post">
+    <fieldset>
+        <div class="form-group">
+            <label asp-for="FirstName">First Name </label>
+            <input class="form-control" asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+
+
+            <label asp-for="MiddleName"> Middle Name </label>
+            <input class="form-control" asp-for="MiddleName" />
+            <span asp-validation-for="MiddleName"></span>
+
+
+            <label asp-for="LastName">Last Name </label>
+            <input class="form-control" asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="SSN">SSN </label>
+            <input class="form-control" asp-for="SSN" />
+            <span asp-validation-for="SSN"></span>
+
+
+            <label asp-for="SsnConfirm">Confirm SSN </label>
+            <input class="form-control" asp-for="SsnConfirm" />
+            <span asp-validation-for="SsnConfirm"></span>
+
+
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label asp-for="Dob">Date Of Birth </label>
+            <input class="form-control" asp-for="Dob" />
+            <span asp-validation-for="Dob"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="Title">Job Title </label>
+            <select asp-for="Title" asp-items="Model.EmployeeTitles"></select>
+            <span asp-validation-for="Title"></span>
+
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LicNumber"> Licence number </label>
+            <input class="form-control" asp-for="LicNumber" />
+            <span asp-validation-for="LicNumber"></span>
+
+
+
+            <label asp-for="LicIssue"> Licence Issuance Date</label>
+            <input class="form-control" asp-for="LicIssue" />
+            <span asp-validation-for="LicIssue"></span>
+
+
+
+            <label asp-for="LicExpire"> Licence Expiration Date</label>
+            <input class="form-control" asp-for="LicExpire" />
+            <span asp-validation-for="LicExpire"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="MedIssue"> DOT Medical Card Issuance Date </label>
+            <input class="form-control" asp-for="MedIssue" />
+            <span asp-validation-for="MedIssue"></span>
+
+            <label asp-for="MedExpire"> DOT Medical Card Expiration Date </label>
+            <input class="form-control" asp-for="MedExpire" />
+            <span asp-validation-for="MedExpire"></span>
+
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="UserName"> UserName </label>
+            <input class="form-control" asp-for="UserName" />
+            <span asp-validation-for="UserName"></span>
+
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"> Password</label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+
+
+            <label asp-for="PasswordConf"> Confirm Password </label>
+            <input class="form-control" asp-for="PasswordConf" />
+            <span asp-validation-for="PasswordConf"></span>
+
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <input type="submit" value="Submit" name="submitButton" />
+        </div>
+
+    </fieldset>
+</form>
+
+<span class="label label-default" name="TodaysDate">@Model.TodaysDate</span>

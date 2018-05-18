@@ -1,0 +1,11 @@
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\bin\Debug\netcoreapp2.0\ClockInMVC.deps.json
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\bin\Debug\netcoreapp2.0\ClockInMVC.runtimeconfig.json
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\bin\Debug\netcoreapp2.0\ClockInMVC.runtimeconfig.dev.json
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\bin\Debug\netcoreapp2.0\ClockInMVC.dll
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.csprojResolveAssemblyReference.cache
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.csproj.CoreCompileInputs.cache
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.AssemblyInfoInputs.cache
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.AssemblyInfo.cs
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\bin\Debug\netcoreapp2.0\ClockInMVC.pdb
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.dll
+C:\Users\iykea\Documents\LC101\ClockInMVC\ClockInMVC\obj\Debug\netcoreapp2.0\ClockInMVC.pdb
