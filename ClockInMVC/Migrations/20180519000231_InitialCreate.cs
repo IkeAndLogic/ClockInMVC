@@ -17,7 +17,7 @@ namespace ClockInMVC.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Dob = table.Column<DateTime>(nullable: false),
                     DotCompliant = table.Column<bool>(nullable: false),
-                    EmployeeStatus = table.Column<bool>(nullable: false),
+                    EmployeeStatus = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     LicExpire = table.Column<DateTime>(nullable: false),
@@ -50,6 +50,7 @@ namespace ClockInMVC.Migrations
                     Model = table.Column<string>(nullable: true),
                     Plate = table.Column<string>(nullable: true),
                     RegDate = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<string>(nullable: true),
                     TruckNumber = table.Column<string>(nullable: true),
                     VinNumber = table.Column<string>(nullable: true),
                     Year = table.Column<string>(nullable: true)
@@ -89,7 +90,6 @@ namespace ClockInMVC.Migrations
                     City = table.Column<string>(nullable: true),
                     Customer = table.Column<string>(nullable: true),
                     DateDue = table.Column<DateTime>(nullable: false),
-                    EmployeeNameEmployeeID = table.Column<int>(nullable: true),
                     LoadPlan = table.Column<string>(nullable: true),
                     OrderNumber = table.Column<string>(nullable: true),
                     OrderStatus = table.Column<string>(nullable: true),
@@ -103,12 +103,6 @@ namespace ClockInMVC.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.OrderID);
-                    table.ForeignKey(
-                        name: "FK_Orders_Employees_EmployeeNameEmployeeID",
-                        column: x => x.EmployeeNameEmployeeID,
-                        principalTable: "Employees",
-                        principalColumn: "EmployeeID",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Trailers_TrailerForLoadTrailerID",
                         column: x => x.TrailerForLoadTrailerID,
@@ -167,14 +161,11 @@ namespace ClockInMVC.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_EmployeeNameEmployeeID",
-                table: "Orders",
-                column: "EmployeeNameEmployeeID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Orders_TrailerForLoadTrailerID",
                 table: "Orders",
-                column: "TrailerForLoadTrailerID");
+                column: "TrailerForLoadTrailerID",
+                unique: true,
+                filter: "[TrailerForLoadTrailerID] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -183,13 +174,13 @@ namespace ClockInMVC.Migrations
                 name: "DriverTractorLoad");
 
             migrationBuilder.DropTable(
+                name: "Employees");
+
+            migrationBuilder.DropTable(
                 name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Tractors");
-
-            migrationBuilder.DropTable(
-                name: "Employees");
 
             migrationBuilder.DropTable(
                 name: "Trailers");

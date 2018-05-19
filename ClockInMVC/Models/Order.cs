@@ -20,20 +20,28 @@ namespace ClockInMVC.Models
         //mark available or Completed
         public string OrderStatus { get; set; }
 
-        //needs to be a Trailer object to assign load to Trailer by trailer number
-        public Trailer TrailerForLoad { get; set; }
 
-        public Employee EmployeeName { get; set; }
 
         // mark as live load or drop and hook
         public string LoadPlan { get; set; }
 
-        //holds the id of individual loads
+        //holds the id of individual Order
         public int OrderID { get; set; }
 
+
+
+        //has a one to one relationship with Trailer
+        //needs to be a Trailer object to assign load to Trailer by trailer number
+        public Trailer TrailerForLoad { get; set; }
+
+
+        //has a one to one relationship with DriverTractorLoad
         public TractorDriverLoad DriverTractorLoad { get; set; }
 
-
+        public Order()
+        {
+            OrderStatus = "Available";
+        }
        
     }
 }

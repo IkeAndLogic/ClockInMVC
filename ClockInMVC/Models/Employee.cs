@@ -35,7 +35,7 @@ namespace ClockInMVC.Models
         public bool OnClock { get; set; }
 
         //boolean to determine if employee is available for work
-        public bool EmployeeStatus { get; set; }
+        public string EmployeeStatus { get; set; }
 
 
 

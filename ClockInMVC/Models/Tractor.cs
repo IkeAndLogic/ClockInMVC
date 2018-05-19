@@ -20,7 +20,14 @@ namespace ClockInMVC.Models
 
         public int TractorID { get; set; }
 
+        public string Status { get; set; }
+
         public TractorDriverLoad DriverOfTractorLoad { get; set; }
 
+
+        public Tractor()
+        {
+            Status = "Available";
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace ClockInMVC.Migrations
 
                     b.Property<bool>("DotCompliant");
 
-                    b.Property<bool>("EmployeeStatus");
+                    b.Property<string>("EmployeeStatus");
 
                     b.Property<string>("FirstName");
 
@@ -78,8 +78,6 @@ namespace ClockInMVC.Migrations
 
                     b.Property<DateTime>("DateDue");
 
-                    b.Property<int?>("EmployeeNameEmployeeID");
-
                     b.Property<string>("LoadPlan");
 
                     b.Property<string>("OrderNumber");
@@ -100,9 +98,9 @@ namespace ClockInMVC.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.HasIndex("EmployeeNameEmployeeID");
-
-                    b.HasIndex("TrailerForLoadTrailerID");
+                    b.HasIndex("TrailerForLoadTrailerID")
+                        .IsUnique()
+                        .HasFilter("[TrailerForLoadTrailerID] IS NOT NULL");
 
                     b.ToTable("Orders");
                 });
@@ -121,6 +119,8 @@ namespace ClockInMVC.Migrations
                     b.Property<string>("Plate");
 
                     b.Property<DateTime>("RegDate");
+
+                    b.Property<string>("Status");
 
                     b.Property<string>("TruckNumber");
 
@@ -185,13 +185,9 @@ namespace ClockInMVC.Migrations
 
             modelBuilder.Entity("ClockInMVC.Models.Order", b =>
                 {
-                    b.HasOne("ClockInMVC.Models.Employee", "EmployeeName")
-                        .WithMany()
-                        .HasForeignKey("EmployeeNameEmployeeID");
-
                     b.HasOne("ClockInMVC.Models.Trailer", "TrailerForLoad")
-                        .WithMany()
-                        .HasForeignKey("TrailerForLoadTrailerID");
+                        .WithOne("orderforTrailer")
+                        .HasForeignKey("ClockInMVC.Models.Order", "TrailerForLoadTrailerID");
                 });
 
             modelBuilder.Entity("ClockInMVC.Models.TractorDriverLoad", b =>

@@ -19,6 +19,10 @@ namespace ClockInMVC.Models
 
         public int TrailerID { get; set; }
 
+        //has a one to one relationship with order
+        public Order orderforTrailer { get; set; }
+
+
         public Trailer()
         {
             Status = "Avaliable";
